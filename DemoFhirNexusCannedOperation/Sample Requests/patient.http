@@ -1,0 +1,40 @@
+@baseUrl=https://localhost:7133
+@applicationId=test-app
+
+### Create a patient
+POST {{baseUrl}}/Patient
+X-Ihis-SourceApplication: {{applicationId}}
+Content-Type: application/fhir+json
+
+{
+    "resourceType": "Patient",
+    "identifier": [
+        {
+            "system": "http://ihis.sg/identifier/nric",
+            "value": "S1900005B"
+        }
+    ],
+    "active": true,
+    "name": [
+        {
+            "text": "Resident 03"
+        }
+    ],
+    "gender": "male",
+    "birthDate": "1977-12-09"
+}
+
+### Create a patient with canned operation
+POST {{baseUrl}}/Patient/$retrieve
+X-Ihis-SourceApplication: {{applicationId}}
+Content-Type: application/fhir+json
+
+{
+    "resourceType": "Parameters",
+    "parameter": [
+        {
+            "name": "identifier",
+            "valueString": "S1900005B"
+        }
+    ]
+}

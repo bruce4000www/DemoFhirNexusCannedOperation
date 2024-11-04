@@ -36,7 +36,8 @@
         "IncludeStandardSearchParams": true,
         "ConnectionString": "Local",
         "AcceptedTypes": [
-          "Appointment"
+          "Appointment",
+          "Patient"
         ]
       }
     }

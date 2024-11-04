@@ -135,6 +135,42 @@
             }
           ]
         },
+        {
+          "type": "Patient",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "patch"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "versioning": "versioned",
+          "operation": [
+            {
+              "name": "retrieve",
+              "definition": "http://sypnapxe.sg/fhir/OperationDefinition/Patient-retrieve"
+            }
+          ]
+        }
       ]
     }
   ]
