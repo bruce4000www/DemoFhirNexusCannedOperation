@@ -4,7 +4,7 @@
   "name": "PatientRetrieve",
   "status": "active",
   "kind": "operation",
-  "affectsState": true,
+  "affectsState": false,
   "description": "Retrieve the Patient.",
   "system": false,
   "type": true,

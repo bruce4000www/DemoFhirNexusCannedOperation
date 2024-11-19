@@ -25,6 +25,25 @@ Content-Type: application/fhir+json
 }
 
 ### Create a patient with canned operation
+POST {{baseUrl}}/Patient/$create
+X-Ihis-SourceApplication: {{applicationId}}
+Content-Type: application/fhir+json
+
+{
+    "resourceType": "Parameters",
+    "parameter": [
+        {
+            "name": "nric",
+            "valueString": "S2900005B"
+        },
+        {
+            "name": "name",
+            "valueString": "Serena"
+        }
+    ]
+}
+
+### Retrieve a patient with canned operation
 POST {{baseUrl}}/Patient/$retrieve
 X-Ihis-SourceApplication: {{applicationId}}
 Content-Type: application/fhir+json
@@ -34,7 +53,7 @@ Content-Type: application/fhir+json
     "parameter": [
         {
             "name": "identifier",
-            "valueString": "S1900005B"
+            "valueString": "S2900005B"
         }
     ]
 }

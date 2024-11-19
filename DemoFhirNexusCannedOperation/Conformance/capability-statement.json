@@ -166,8 +166,12 @@
           "versioning": "versioned",
           "operation": [
             {
+              "name": "create",
+              "definition": "OperationDefinition/Patient-create"
+            },
+            {
               "name": "retrieve",
-              "definition": "http://sypnapxe.sg/fhir/OperationDefinition/Patient-retrieve"
+              "definition": "OperationDefinition/Patient-retrieve"
             }
           ]
         }
