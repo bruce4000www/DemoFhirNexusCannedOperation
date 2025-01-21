@@ -1,0 +1,36 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-patch-placeholder",
+  "name": "OperationDefinition_parameter_canned_patch_placeholder",
+  "status": "draft",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "boolean"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-patch-placeholder"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      }
+    ]
+  }
+}

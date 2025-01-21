@@ -1,0 +1,71 @@
+{
+  "resourceType": "OperationDefinition",
+  "meta": {
+    "profile": [ "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-canned-search" ]
+  },
+  "id": "Patient-search",
+  "name": "PatientSearch",
+  "status": "active",
+  "kind": "operation",
+  "affectsState": false,
+  "description": "Search Patient.",
+  "system": false,
+  "type": true,
+  "instance": false,
+  "resource": [ "Patient" ],
+  "code": "search",
+  "parameter": [
+    {
+      "name": "_total",
+      "use": "in",
+      "min": 0,
+      "max": "0",
+      "type": "string",
+      "extension": [
+        {
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-default-value",
+          "valueString": "accurate"
+        }
+      ]
+    },
+    {
+      "name": "_count",
+      "use": "in",
+      "min": 0,
+      "max": "0",
+      "type": "integer",
+      "extension": [
+        {
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-default-value",
+          "valueInteger": 20
+        }
+      ]
+    },
+    {
+      "name": "nric",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "type": "string",
+      "extension": [
+        {
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-search",
+          "extension": [
+            {
+              "url": "mapping",
+              "valueCode": "identifier"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "result",
+      "use": "out",
+      "min": 1,
+      "max": "1",
+      "documentation": "A bundle containing patient resources",
+      "type": "Patient"
+    }
+  ]
+}

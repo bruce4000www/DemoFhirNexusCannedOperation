@@ -1,0 +1,20 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.synapxe.sg/StructureDefinition/MyPatient",
+  "name": "MyPatient",
+  "status": "active",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient.active",
+        "path": "Patient.active",
+        "fixedBoolean": true
+      }
+    ]
+  }
+}

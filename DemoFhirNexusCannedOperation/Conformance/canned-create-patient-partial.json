@@ -1,16 +1,19 @@
 {
   "resourceType": "OperationDefinition",
-  "id": "Patient-create",
+  "meta": {
+    "profile": [ "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-canned-patch-extended" ]
+  },
+  "id": "Patient-create-partial",
   "name": "PatientCreate",
   "status": "active",
   "kind": "operation",
   "affectsState": true,
-  "description": "Create a patient.",
+  "description": "Create a patient with partial payload from user input.",
   "system": false,
   "type": true,
   "instance": false,
   "resource": [ "Patient" ],
-  "code": "create",
+  "code": "create-partial",
   "contained": [
     {
       "resourceType": "Patient",
@@ -40,7 +43,7 @@
       "type": "Patient",
       "extension": [
         {
-          "url": "http://synapxe.sg/StructureDefinition/OperationDefinition-parameter-default-value",
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-default-value",
           "valueReference": {
             "reference": "#template"
           }
@@ -57,7 +60,7 @@
       "type": "string",
       "extension": [
         {
-          "url": "http://synapxe.sg/StructureDefinition/OperationDefinition-parameter-canned-patch",
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-patch",
           "extension": [
             {
               "url": "path",
@@ -81,7 +84,7 @@
       "type": "string",
       "extension": [
         {
-          "url": "http://synapxe.sg/StructureDefinition/OperationDefinition-parameter-canned-patch",
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-patch",
           "extension": [
             {
               "url": "path",

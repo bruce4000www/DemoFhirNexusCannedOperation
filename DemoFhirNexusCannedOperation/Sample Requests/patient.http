@@ -11,10 +11,10 @@ Content-Type: application/fhir+json
     "identifier": [
         {
             "system": "http://ihis.sg/identifier/nric",
-            "value": "S1900005B"
+            "value": "S1500008B"
         }
     ],
-    "active": true,
+    "active": false,
     "name": [
         {
             "text": "Resident 03"
@@ -24,8 +24,8 @@ Content-Type: application/fhir+json
     "birthDate": "1977-12-09"
 }
 
-### Create a patient with canned operation
-POST {{baseUrl}}/Patient/$create
+### Create a patient with canned patch-extended operation
+POST {{baseUrl}}/Patient/$create-partial
 X-Ihis-SourceApplication: {{applicationId}}
 Content-Type: application/fhir+json
 
@@ -43,7 +43,45 @@ Content-Type: application/fhir+json
     ]
 }
 
-### Retrieve a patient with canned operation
+### Create a patient with canned create operation
+POST {{baseUrl}}/Patient/$create-full
+X-Ihis-SourceApplication: {{applicationId}}
+Content-Type: application/fhir+json
+
+{
+    "resourceType": "Patient",
+    "identifier": [
+        {
+            "system": "http://ihis.sg/identifier/nric",
+            "value": "S1900005B"
+        }
+    ],
+    "active": true,
+    "name": [
+        {
+            "text": "Resident 03"
+        }
+    ],
+    "gender": "male",
+    "birthDate": "1977-12-09"
+}
+
+### Search patient with canned create search operation
+POST {{baseUrl}}/Patient/$search
+X-Ihis-SourceApplication: {{applicationId}}
+Content-Type: application/fhir+json
+
+{
+    "resourceType": "Parameters",
+    "parameter": [
+        {
+            "name": "nric",
+            "valueString": "S1900009B"
+        }
+    ]
+}
+
+### Retrieve a patient with canned get operation
 POST {{baseUrl}}/Patient/$retrieve
 X-Ihis-SourceApplication: {{applicationId}}
 Content-Type: application/fhir+json
@@ -53,7 +91,27 @@ Content-Type: application/fhir+json
     "parameter": [
         {
             "name": "identifier",
-            "valueString": "S2900005B"
+            "valueString": "S1900009B"
+        }
+    ]
+}
+
+
+### Update a patient with canned patch-extended operation and pre-patch profile
+POST {{baseUrl}}/Patient/$update
+X-Ihis-SourceApplication: {{applicationId}}
+Content-Type: application/fhir+json
+
+{
+    "resourceType": "Parameters",
+    "parameter": [
+        {
+            "name": "nric",
+            "valueString": "S1500008B"
+        },
+        {
+            "name": "DOB",
+            "valueDate": "2000-01-19"
         }
     ]
 }

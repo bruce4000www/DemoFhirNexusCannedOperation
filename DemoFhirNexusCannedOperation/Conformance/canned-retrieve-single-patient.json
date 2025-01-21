@@ -1,5 +1,8 @@
 {
   "resourceType": "OperationDefinition",
+  "meta": {
+    "profile": [ "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-canned-get" ]
+  },
   "id": "Patient-retrieve",
   "name": "PatientRetrieve",
   "status": "active",

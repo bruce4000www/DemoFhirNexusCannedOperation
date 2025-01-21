@@ -1,5 +1,8 @@
 {
   "resourceType": "OperationDefinition",
+  "meta": {
+    "profile": [ "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-canned-patch" ]
+  },
   "id": "Appointment-move-appointment-date",
   "name": "MoveAppointmentDate",
   "status": "active",
@@ -22,7 +25,7 @@
       "type": "code",
       "extension": [
         {
-          "url": "http://synapxe.sg/StructureDefinition/OperationDefinition-parameter-canned-patch",
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-patch",
           "extension": [
             {
               "url": "path",
@@ -35,7 +38,7 @@
           ]
         },
         {
-          "url": "http://synapxe.sg/StructureDefinition/OperationDefinition-parameter-default-value",
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-default-value",
           "valueCode": "proposed"
         }
       ]
@@ -50,7 +53,7 @@
       "type": "integer",
       "extension": [
         {
-          "url": "http://synapxe.sg/StructureDefinition/OperationDefinition-parameter-canned-patch",
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-patch",
           "extension": [
             {
               "url": "path",
@@ -63,7 +66,7 @@
           ]
         },
         {
-          "url": "http://synapxe.sg/StructureDefinition/OperationDefinition-parameter-transform",
+          "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-transform",
           "valueString": "now() + ($this.toString() + ' day').toQuantity()"
         }
       ]

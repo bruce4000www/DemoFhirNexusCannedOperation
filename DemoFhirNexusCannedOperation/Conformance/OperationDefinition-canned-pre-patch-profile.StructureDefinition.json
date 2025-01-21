@@ -1,0 +1,46 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-pre-patch-profile",
+  "name": "OperationDefinitionPrePatchProfile",
+  "title": "OperationDefinition Pre-Patch Profile Extension",
+  "status": "active",
+  "description": "Extension to specify a profile that must be validated against before applying a patch operation",
+  "fhirVersion": "4.3.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "OperationDefinition"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Pre-patch profile reference",
+        "definition": "Reference to a profile that must be validated against before applying a patch operation"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-pre-patch-profile"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "canonical"
+          }
+        ],
+        "min": 1,
+        "max": "1"
+      }
+    ]
+  }
+}

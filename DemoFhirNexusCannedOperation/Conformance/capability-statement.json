@@ -49,6 +49,9 @@
             {
               "code": "read",
               "documentation": "Returns the Structure Definition."
+            },
+            {
+              "code": "create"
             }
           ],
           "versioning": "no-version"
@@ -65,7 +68,6 @@
         },
         {
           "type": "Appointment",
-          "profile": "StructureDefinition/Appointment-custom",
           "interaction": [
             {
               "code": "read",
@@ -166,8 +168,20 @@
           "versioning": "versioned",
           "operation": [
             {
-              "name": "create",
-              "definition": "OperationDefinition/Patient-create"
+              "name": "update",
+              "definition": "OperationDefinition/Patient-update"
+            },
+            {
+              "name": "search",
+              "definition": "OperationDefinition/Patient-search"
+            },
+            {
+              "name": "create-full",
+              "definition": "OperationDefinition/Patient-create-full"
+            },
+            {
+              "name": "create-partial",
+              "definition": "OperationDefinition/Patient-create-partial"
             },
             {
               "name": "retrieve",

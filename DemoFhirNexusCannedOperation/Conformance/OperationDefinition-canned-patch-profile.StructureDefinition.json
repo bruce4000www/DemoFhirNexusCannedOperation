@@ -1,0 +1,91 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "fhirnexus-canned-patch",
+  "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-canned-patch",
+  "version": "1.0.0",
+  "name": "CannedPatch",
+  "status": "active",
+  "kind": "resource",
+  "abstract": false,
+  "type": "OperationDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "OperationDefinition.kind",
+        "path": "OperationDefinition.kind",
+        "fixedCode": "operation"
+      },
+      {
+        "id": "OperationDefinition.affectsState",
+        "path": "OperationDefinition.affectsState",
+        "fixedBoolean": true
+      },
+      {
+        "id": "OperationDefinition.resource",
+        "path": "OperationDefinition.resource",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "OperationDefinition.instance",
+        "path": "OperationDefinition.instance",
+        "fixedBoolean": true
+      },
+      {
+        "id": "OperationDefinition.parameter",
+        "path": "OperationDefinition.parameter",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "use"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "OperationDefinition.parameter:inParameter",
+        "path": "OperationDefinition.parameter",
+        "sliceName": "inParameter",
+        "min": 1
+      },
+      {
+        "id": "OperationDefinition.parameter:inParameter.use",
+        "path": "OperationDefinition.parameter.use",
+        "fixedCode": "in"
+      },
+      {
+        "id": "OperationDefinition.parameter:outParameter",
+        "path": "OperationDefinition.parameter",
+        "sliceName": "outParameter",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "OperationDefinition.parameter:outParameter.use",
+        "path": "OperationDefinition.parameter.use",
+        "fixedCode": "out"
+      },
+      {
+        "id": "OperationDefinition.parameter:outParameter.max",
+        "path": "OperationDefinition.parameter.max",
+        "fixedString": "1"
+      },
+      {
+        "id": "OperationDefinition.parameter:outParameter.type",
+        "path": "OperationDefinition.parameter.type",
+        "constraint": [
+          {
+            "key": "canned-1",
+            "severity": "error",
+            "human": "Type shall match with resource[0]",
+            "expression": "$this=%resource.resource.first()"
+          }
+        ]
+      }
+    ]
+  }
+}

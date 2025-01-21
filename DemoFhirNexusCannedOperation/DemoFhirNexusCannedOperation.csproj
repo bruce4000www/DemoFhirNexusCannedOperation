@@ -12,15 +12,51 @@
     
     <ItemGroup>
     
-        <PackageReference Include="Ihis.FhirEngine.Data.SqlServer" Version="5.0.0-dev-24304.3" />
-        <PackageReference Include="Ihis.FhirEngine.Data.SqlServer.Extensions.Migration" Version="5.0.0-dev-24304.3" />
-        <PackageReference Include="Ihis.FhirEngine.Extensions.OpenTelemetry" Version="5.0.0-dev-24304.3" />
-        <PackageReference Include="Ihis.FhirEngine.WebApi.Extensions.AuditLogging.Serilog" Version="5.0.0-dev-24304.3" />
-        <PackageReference Include="Ihis.FhirEngine.WebApi.Extensions.Swashbuckle" Version="5.0.0-dev-24304.3" />
-        <PackageReference Include="Ihis.FhirEngine.WebApi.R5" Version="5.0.0-dev-24304.3" />
+        <PackageReference Include="Ihis.FhirEngine.Data.SqlServer" Version="4.3.0-dev-25013.2" />
+        <PackageReference Include="Ihis.FhirEngine.Data.SqlServer.Extensions.Migration" Version="4.3.0-dev-25013.2" />
+        <PackageReference Include="Ihis.FhirEngine.Extensions.OpenTelemetry" Version="4.3.0-dev-25013.2" />
+        <PackageReference Include="Ihis.FhirEngine.WebApi.Extensions.AuditLogging.Serilog" Version="4.3.0-dev-25013.2" />
+        <PackageReference Include="Ihis.FhirEngine.WebApi.Extensions.Swashbuckle" Version="4.3.0-dev-25013.2" />
+        <PackageReference Include="Ihis.FhirEngine.WebApi.R5" Version="4.3.0-dev-25013.2" />
     </ItemGroup>
 
     <ItemGroup>
         <AdditionalFiles Include="Conformance/*.StructureDefinition.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Update="Conformance\OperationDefinition-canned-create-profile.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
+      <AdditionalFiles Update="Conformance\OperationDefinition-canned-get-profile.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
+      <AdditionalFiles Update="Conformance\OperationDefinition-canned-patch-extended-profile.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
+      <AdditionalFiles Update="Conformance\OperationDefinition-canned-patch-profile.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
+      <AdditionalFiles Update="Conformance\OperationDefinition-canned-pre-patch-profile.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
+      <AdditionalFiles Update="Conformance\OperationDefinition-canned-search-profile.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
+      <AdditionalFiles Update="Conformance\OperationDefinition-parameter-canned-patch-placeholder.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
+      <AdditionalFiles Update="Conformance\OperationDefinition-parameter-canned-patch.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
+      <AdditionalFiles Update="Conformance\OperationDefinition-parameter-canned-search.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
+      <AdditionalFiles Update="Conformance\OperationDefinition-parameter-default-value.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
+      <AdditionalFiles Update="Conformance\OperationDefinition-parameter-transform.StructureDefinition.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AdditionalFiles>
     </ItemGroup>
 </Project>

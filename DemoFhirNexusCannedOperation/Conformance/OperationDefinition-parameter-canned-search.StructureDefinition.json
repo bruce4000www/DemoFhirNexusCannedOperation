@@ -1,0 +1,134 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-search",
+  "name": "OperationDefinition_parameter_canned_search",
+  "status": "draft",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "OperationDefinition.parameter"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension:mapping",
+        "path": "Extension.extension",
+        "sliceName": "mapping",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:mapping.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "mapping"
+      },
+      {
+        "id": "Extension.extension:mapping.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "code"
+          },
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:prefix",
+        "path": "Extension.extension",
+        "sliceName": "prefix",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:prefix.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "prefix"
+      },
+      {
+        "id": "Extension.extension:prefix.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:system",
+        "path": "Extension.extension",
+        "sliceName": "system",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:system.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "system"
+      },
+      {
+        "id": "Extension.extension:system.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:unit",
+        "path": "Extension.extension",
+        "sliceName": "unit",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:unit.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "unit"
+      },
+      {
+        "id": "Extension.extension:unit.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:composite-index",
+        "path": "Extension.extension",
+        "sliceName": "composite-index"
+      },
+      {
+        "id": "Extension.extension:composite-index.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "composite-index"
+      },
+      {
+        "id": "Extension.extension:composite-index.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "unsignedInt"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.synapxe.sg/StructureDefinition/fhirnexus-parameter-canned-search"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}
