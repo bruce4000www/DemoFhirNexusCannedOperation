@@ -4,8 +4,8 @@ using Task = System.Threading.Tasks.Task;
 
 namespace DemoFhirNexusCannedOperation.Handlers
 {
-    [FhirHandlerClass(AcceptedType = nameof(StructureDefinition))]
-    public class StructureDefinitionValidator
+    [FhirHandlerClass(AcceptedType = nameof(OperationDefinition))]
+    public class OperationDefinitionValidator
     {
         [FhirHandler(HandlerCategory.PreCRUD, FhirInteractionType.Create)]
         public async Task PreCRUD(IFhirContext fhirContext, CancellationToken cancellationToken = default)

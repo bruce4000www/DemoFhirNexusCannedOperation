@@ -29,6 +29,9 @@
             {
               "code": "read",
               "documentation": "Returns the Operation Definition."
+            },
+            {
+              "code": "create"
             }
           ],
           "versioning": "no-version"
@@ -49,9 +52,6 @@
             {
               "code": "read",
               "documentation": "Returns the Structure Definition."
-            },
-            {
-              "code": "create"
             }
           ],
           "versioning": "no-version"

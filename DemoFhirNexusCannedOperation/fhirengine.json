@@ -37,7 +37,8 @@
         "ConnectionString": "Local",
         "AcceptedTypes": [
           "Appointment",
-          "Patient"
+          "Patient",
+          "OperationDefinition"
         ]
       }
     }
